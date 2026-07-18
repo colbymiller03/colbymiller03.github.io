@@ -3675,3 +3675,12 @@ background-color: #111111;
     position: relative;
     z-index: 2;
 }
+
+.hero {
+    background:
+        linear-gradient(rgba(15,15,15,.65), rgba(15,15,15,.65)),
+        url("../images/thermal-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
