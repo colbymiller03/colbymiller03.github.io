@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Test Engineering | Colby Miller</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- MathJax configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      }
+    };
+  </script>
+
+  <!-- Correct MathJax script -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="testhero">
+
+    <a class="back-link" href="beachlaunchteam.html">
+      ← Back to Beach Launch Team
+    </a>
+
+    <div class="testherocontent">
+
+      <p class="section-label">Beach Launch Team</p>
+
+      <h1>Test Engineering</h1>
+
+      <p class="technical-subtitle">
+        Experimental verification of the Theseus fluids and propulsion systems
+      </p>
+
+      <p class="testherotext">
+        Water flow characterization, cryogenic cold flow testing, test
+        direction, pressure instrumentation, and regenerative cooling channel
+        verification.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main class="technical-page">
+
+    <!-- =====================================================
+         WATER FLOW TESTING
+    ====================================================== -->
+
+    <section class="testsection">
+
+      <div class="testsectionheading">
+
+        <div class="phase-number">01</div>
+
+        <div>
+          <p class="phase-label">Feed System Characterization</p>
+          <h2>Water Flow 2 — Test Director</h2>
+        </div>
+
+      </div>
+
+
+      <div class="testintrogrid">
+
+        <div class="testtext">
+
+          <p>
+            Two water flow campaigns were completed to characterize the
+            pressure drop, flow rate, and effective flow coefficient of the
+            Theseus feed system before cryogenic testing and static fire.
+          </p>
+
+          <p>
+            I served as Test Director for the second water flow campaign. I
+            directed the procedure, coordinated test personnel, enforced GO
+            and NO-GO criteria, monitored pressure transducer data, and
+            supervised water collection during each run.
+          </p>
+
+        </div>
+
+
+        <div class="testimage">
+
+          <img
+            src="../images/waterflow.jpg"
+            alt="Theseus water flow testing"
+          />
+
+          <div class="testcaption">
+
+            <span>Water Flow Testing</span>
+
+            <p>
+              Experimental characterization of the Theseus feed system.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WATER FLOW 1 -->
+
+      <div class="testsubsection">
+
+        <p class="section-label">Initial Campaign</p>
+
+        <h3>Water Flow 1</h3>
+
+        <div class="testtwocolumn">
+
+          <div class="testtext">
+
+            <p>
+              The university limited the high-pressure COPV to 500 psi. During
+              the first campaign, the main valves remained open for nearly the
+              complete planned burn duration.
+            </p>
+
+            <p>
+              As the COPV discharged, its pressure fell until the inlet
+              pressure of the dome regulators approached their outlet
+              pressure. The regulators could no longer maintain stable control,
+              causing the pressure data near the end of each run to become
+              unreliable.
+            </p>
+
+          </div>
+
+
+          <div class="testcallout warning">
+
+            <p class="section-label">Observed Problem</p>
+
+            <strong>Loss of Regulator Control</strong>
+
+            <p>
+              Long-duration runs allowed the COPV pressure to decrease below
+              the range required for stable dome-regulator operation.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WATER FLOW 2 -->
+
+      <div class="testsubsection">
+
+        <p class="section-label">Corrected Campaign</p>
+
+        <h3>Water Flow 2</h3>
+
+        <div class="testtwocolumn">
+
+          <div class="testtext">
+
+            <p>
+              For the second campaign, we reduced each run to approximately
+              three to five seconds. This prevented excessive COPV pressure
+              decay while still providing enough steady-flow data for
+              analysis.
+            </p>
+
+            <p>
+              The corrected test produced stable pressure measurements that
+              were used to calculate experimental system pressure drop,
+              volumetric flow rate, and flow coefficient.
+            </p>
+
+            <p>
+              The experimental results were compared with theoretical
+              calculations and used to help determine the final LOX and fuel
+              tank pressures before static fire.
+            </p>
+
+          </div>
+
+
+          <div class="testcallout success">
+
+            <p class="section-label">Corrective Action</p>
+
+            <strong>Three-to-Five-Second Runs</strong>
+
+            <p>
+              Shorter runs maintained sufficient regulator inlet pressure and
+              produced stable, repeatable test data.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEST PROCESS -->
+
+      <div class="testprocessgrid">
+
+        <div class="testprocesscard">
+          <span>01</span>
+          <strong>Pressurize System</strong>
+          <p>Set the required test pressure and confirm test readiness.</p>
+        </div>
+
+        <div class="testprocesscard">
+          <span>02</span>
+          <strong>Open Main Valves</strong>
+          <p>Flow water through the complete vehicle feed system.</p>
+        </div>
+
+        <div class="testprocesscard">
+          <span>03</span>
+          <strong>Record PT Data</strong>
+          <p>Monitor tank and engine-inlet pressure transducers.</p>
+        </div>
+
+        <div class="testprocesscard">
+          <span>04</span>
+          <strong>Collect Water</strong>
+          <p>Measure discharged water mass and flow duration.</p>
+        </div>
+
+        <div class="testprocesscard">
+          <span>05</span>
+          <strong>Calculate Flow Rate</strong>
+          <p>Determine average volumetric flow through each feed path.</p>
+        </div>
+
+        <div class="testprocesscard">
+          <span>06</span>
+          <strong>Compare Results</strong>
+          <p>Compare measured pressure drop and Cv with theory.</p>
+        </div>
+
+      </div>
+
+
+      <!-- EXPERIMENTAL EQUATIONS -->
+
+      <div class="equationsection">
+
+        <div class="equationheading">
+
+          <p class="section-label">Data Reduction</p>
+
+          <h3>Experimental Flow Calculations</h3>
+
+        </div>
+
+
+        <div class="equationgrid">
+
+          <div class="equationcard">
+
+            <span>Volumetric Flow Rate</span>
+
+            <div class="equation">
+              \[
+              Q = \frac{V}{t}
+              \]
+            </div>
+
+            <p>
+              When collected water mass was measured, volume was calculated
+              using the density of water.
+            </p>
+
+            <div class="equation">
+              \[
+              Q = \frac{m}{\rho t}
+              \]
+            </div>
+
+          </div>
+
+
+          <div class="equationcard">
+
+            <span>Experimental Flow Coefficient</span>
+
+            <div class="equation">
+              \[
+              C_v = Q\sqrt{\frac{SG}{\Delta P}}
+              \]
+            </div>
+
+            <p>
+              Because the test fluid was water, its specific gravity was
+              approximately one.
+            </p>
+
+            <div class="equation">
+              \[
+              C_v = \frac{Q}{\sqrt{\Delta P}}
+              \]
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- THEORETICAL EQUATIONS -->
+
+        <div class="equationheading pressureheading">
+
+          <p class="section-label">Analytical Comparison</p>
+
+          <h3>Theoretical Pressure Drop</h3>
+
+        </div>
+
+
+        <div class="equationgrid pressuregrid">
+
+          <div class="equationcard">
+
+            <span>Reynolds Number</span>
+
+            <div class="equation">
+              \[
+              Re = \frac{\rho vD}{\mu}
+              \]
+            </div>
+
+            <p>
+              Reynolds number was calculated for each tubing section to
+              characterize the flow regime.
+            </p>
+
+          </div>
+
+
+          <div class="equationcard">
+
+            <span>Swamee-Jain Friction Factor</span>
+
+            <div class="equation">
+              \[
+              f =
+              \frac{0.25}{
+              \left[
+              \log_{10}
+              \left(
+              \frac{\epsilon}{3.7D}
+              +
+              \frac{5.74}{Re^{0.9}}
+              \right)
+              \right]^2
+              }
+              \]
+            </div>
+
+            <p>
+              The Swamee-Jain equation was used to calculate the Darcy friction
+              factor without an iterative solution.
+            </p>
+
+          </div>
+
+
+          <div class="equationcard">
+
+            <span>Major Losses</span>
+
+            <div class="equation">
+              \[
+              \Delta P_{\mathrm{major}}
+              =
+              f\frac{L}{D}\frac{\rho v^2}{2}
+              \]
+            </div>
+
+            <p>
+              Major losses represented friction through straight sections of
+              tubing.
+            </p>
+
+          </div>
+
+
+          <div class="equationcard">
+
+            <span>Minor Losses</span>
+
+            <div class="equation">
+              \[
+              \Delta P_{\mathrm{minor}}
+              =
+              \sum K\frac{\rho v^2}{2}
+              \]
+            </div>
+
+            <p>
+              Minor losses represented valves, fittings, bends, tees, and
+              other inline components.
+            </p>
+
+          </div>
+
+
+          <div class="equationcard wide">
+
+            <span>Total Predicted Pressure Drop</span>
+
+            <div class="equation">
+              \[
+              \Delta P_{\mathrm{total}}
+              =
+              \left(
+              f\frac{L}{D}
+              +
+              \sum K
+              \right)
+              \frac{\rho v^2}{2}
+              \]
+            </div>
+
+            <p>
+              The analytical pressure loss was compared with the pressure
+              difference measured between the tank and engine-inlet pressure
+              transducers.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SINGLE WATER FLOW VIDEO -->
+
+      <div class="testmediasection">
+
+        <div class="equationheading">
+
+          <p class="section-label">Test Operations</p>
+
+          <h3>Leading Water Flow 2</h3>
+
+        </div>
+
+
+        <div class="testvideosingle">
+
+          <div class="testvideo">
+
+            <video controls preload="metadata">
+              <source
+                src="../videos/waterflowvideo.mp4"
+                type="video/mp4"
+              />
+
+              Your browser does not support this video.
+            </video>
+
+            <div class="testvideocaption">
+              Directing personnel and leading operations during the second
+              Theseus water flow campaign.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="testresultbox">
+
+        <p class="section-label">Result</p>
+
+        <h3>Feed System Characterized</h3>
+
+        <p>
+          The second campaign produced stable pressure and flow measurements.
+          Experimental pressure drop and flow coefficient were compared with
+          analytical predictions and used to support the final LOX and fuel
+          tank-pressure selections before static fire.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOX COLD FLOW
+    ====================================================== -->
+
+    <section class="testsection testalternate">
+
+      <div class="testsectionheading">
+
+        <div class="phase-number">02</div>
+
+        <div>
+          <p class="phase-label">Cryogenic Verification</p>
+          <h2>LOX Cold Flow Testing</h2>
+        </div>
+
+      </div>
+
+
+      <div class="testtext wide">
+
+        <p>
+          Two LOX cold flow campaigns were performed to verify that the
+          oxidizer system could be loaded, chilled, pressurized, and flowed
+          normally under cryogenic conditions before static fire.
+        </p>
+
+        <p>
+          Cold flow testing allowed the team to identify cryogenic leakage,
+          thermal contraction, hardware failures, and procedural issues that
+          could not be reproduced during room-temperature water testing.
+        </p>
+
+      </div>
+
+
+      <div class="coldflowgrid">
+
+        <div class="coldflowcard failure">
+
+          <p class="section-label">Cold Flow 1</p>
+
+          <h3>Integration Issues Identified</h3>
+
+          <p>
+            The chilling phase was skipped during the first cold flow. When
+            LOX entered the system, the hardware experienced rapid thermal
+            contraction and severe cryogenic loading.
+          </p>
+
+          <p>
+            The composite overwrap on the LOX tank delaminated, and several
+            overtorqued Swagelok fittings in the lower fluids assembly
+            developed leaks under cryogenic conditions.
+          </p>
+
+          <div class="coldflowtags">
+
+            <span>Skipped Chilldown</span>
+            <span>Tank Delamination</span>
+            <span>Cryogenic Leakage</span>
+            <span>Overtorqued Fittings</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="coldflowcard correction">
+
+          <p class="section-label">Corrective Actions</p>
+
+          <h3>Hardware and Procedure Updates</h3>
+
+          <ul>
+            <li>Added a controlled system chilling phase</li>
+            <li>Reworked leaking lower-fluids fittings</li>
+            <li>Reviewed Swagelok installation practices</li>
+            <li>Inspected oxidizer-system hardware</li>
+            <li>Updated the LOX loading procedure</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="coldflowsuccess">
+
+        <div class="testtext">
+
+          <p class="section-label">Cold Flow 2</p>
+
+          <h3>Successful Cryogenic Verification</h3>
+
+          <p>
+            The second cold flow was completed the night before static fire.
+            The updated chilldown and loading process worked as intended, and
+            the oxidizer system remained stable under cryogenic conditions.
+          </p>
+
+          <p>
+            The successful test provided confidence that the LOX tank,
+            plumbing, valves, fittings, and operating procedure were ready for
+            integrated hot-fire operations.
+          </p>
+
+        </div>
+
+
+        <div class="testvideo">
+
+          <video controls preload="metadata">
+            <source
+              src="../videos/loxcoldflowvideo.mov"
+              type="video/quicktime"
+            />
+
+            Your browser does not support this video.
+          </video>
+
+          <div class="testvideocaption">
+            Successful LOX cold flow completed before static fire.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         IR ENGINE TESTING
+    ====================================================== -->
+
+    <section class="testsection">
+
+      <div class="testsectionheading">
+
+        <div class="phase-number">03</div>
+
+        <div>
+          <p class="phase-label">Engine Verification</p>
+          <h2>LR101 Regenerative Channel Testing</h2>
+        </div>
+
+      </div>
+
+
+      <div class="testintrogrid">
+
+        <div class="testtext">
+
+          <p>
+            Before static fire, the team needed to verify that the previously
+            fired LR101 engine still had continuous regenerative cooling
+            passages.
+          </p>
+
+          <p>
+            Hot water was circulated through the engine while its external
+            temperature distribution was monitored using an infrared camera. I
+            operated the thermal camera and monitored the engine surface for
+            localized temperature differences.
+          </p>
+
+          <p>
+            A damaged or obstructed regenerative channel would have produced
+            an abnormal thermal region compared with the surrounding passages.
+            The observed temperature pattern provided confidence that the
+            cooling channels remained intact.
+          </p>
+
+
+          <div class="irprocess">
+
+            <div>
+              <span>01</span>
+              <strong>Hot Water Flow</strong>
+            </div>
+
+            <div class="irarrow">→</div>
+
+            <div>
+              <span>02</span>
+              <strong>Regen Channels</strong>
+            </div>
+
+            <div class="irarrow">→</div>
+
+            <div>
+              <span>03</span>
+              <strong>Infrared Imaging</strong>
+            </div>
+
+            <div class="irarrow">→</div>
+
+            <div>
+              <span>04</span>
+              <strong>Integrity Check</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="testimage">
+
+          <img
+            src="../images/irtesting.jpg"
+            alt="Infrared testing of the LR101 regenerative cooling channels"
+          />
+
+          <div class="testcaption">
+
+            <span>Infrared Verification</span>
+
+            <p>
+              Thermal imaging used to inspect regenerative channel continuity.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section class="testskills">
+
+      <p class="section-label">Skills Applied</p>
+
+      <h2>Test Experience</h2>
+
+      <div class="testskillgrid">
+
+        <span>Test Direction</span>
+        <span>Procedure Execution</span>
+        <span>GO and NO-GO Decisions</span>
+        <span>Pressure Transducers</span>
+        <span>Water Flow Testing</span>
+        <span>Flow Coefficient Analysis</span>
+        <span>Pressure Drop Analysis</span>
+        <span>Swamee-Jain Equation</span>
+        <span>Darcy-Weisbach Equation</span>
+        <span>LOX Cold Flow</span>
+        <span>Cryogenic Operations</span>
+        <span>Infrared Thermography</span>
+        <span>Failure Investigation</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEXT PAGE -->
+
+    <section class="next-project">
+
+      <p class="section-label">Next Contribution</p>
+
+      <h2>Static Fire and Launch</h2>
+
+      <a class="industrial-btn filled" href="staticfirelaunch.html">
+        View Static Fire and Launch
+      </a>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

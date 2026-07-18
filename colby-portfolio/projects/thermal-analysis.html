@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Engine Thermal Analysis | Colby Miller</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<body>
+
+  <header class="technical-hero">
+    <a class="back-link" href="schedule-1.html">← Back to Schedule 1</a>
+
+    <p class="section-label">Schedule 1 Technical Contribution</p>
+
+    <h1>Engine Thermal Analysis</h1>
+
+    <p class="technical-subtitle">
+      Bartz heat-transfer modeling and transient thermal simulation
+    </p>
+
+    <p class="technical-intro">
+      The Schedule 1 engine thermal workflow combined analytical gas-side
+      heat-transfer calculations with a transient ANSYS Mechanical model.
+      The objective was to estimate the worst-case chamber and throat
+      temperatures during a short-duration hot fire before accounting for
+      film cooling.
+    </p>
+  </header>
+
+
+  <main class="technical-page">
+
+    <!-- PHASE 01 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">01</div>
+
+        <div>
+          <p class="phase-label">Phase 01</p>
+          <h2>Bartz Heat-Transfer Analysis</h2>
+        </div>
+      </div>
+
+      <div class="phase-content">
+
+        <p>
+          The internal engine contour was divided into discrete axial sections
+          through the chamber, converging section, throat, and diverging nozzle.
+          Local area ratios were evaluated at each section and matched with
+          thermodynamic properties generated through NASA CEA.
+        </p>
+
+        <p>
+          These local values were passed into MATLAB and used to calculate the
+          gas-side convective heat-transfer coefficient with the Bartz
+          correlation. A first estimate of wall temperature was used to obtain
+          the initial heat-transfer distribution, followed by one additional
+          iteration using the updated wall-temperature prediction.
+        </p>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">Gas-Side Heat-Transfer Coefficient</p>
+
+        <div class="equation">
+          \[
+          h_g =
+          \frac{0.026}{D_t^{0.2}}
+          \left(
+          \frac{\mu^{0.2} c_p}{Pr^{0.6}}
+          \right)
+          \left(
+          \frac{P_c}{c^*}
+          \right)^{0.8}
+          \left(
+          \frac{D_t}{r_c}
+          \right)^{0.1}
+          \left(
+          \frac{A_t}{A}
+          \right)^{0.9}
+          \sigma
+          \]
+        </div>
+
+        <div class="equation-definitions">
+          <span><strong>\(h_g\)</strong> — gas-side convection coefficient</span>
+          <span><strong>\(D_t\)</strong> — throat diameter</span>
+          <span><strong>\(\mu\)</strong> — combustion-gas viscosity</span>
+          <span><strong>\(c_p\)</strong> — constant-pressure specific heat</span>
+          <span><strong>\(Pr\)</strong> — Prandtl number</span>
+          <span><strong>\(P_c\)</strong> — chamber pressure</span>
+          <span><strong>\(c^*\)</strong> — characteristic velocity</span>
+          <span><strong>\(r_c\)</strong> — throat radius of curvature</span>
+          <span><strong>\(A_t/A\)</strong> — local throat-to-section area ratio</span>
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">Bartz Correction Factor</p>
+
+        <div class="equation">
+          \[
+          \sigma =
+          \left[
+          \frac{1}{2}
+          \left(
+          \frac{T_w}{T_0}
+          \right)
+          \left(
+          1+\frac{\gamma-1}{2}M^2
+          \right)
+          +\frac{1}{2}
+          \right]^{-0.68}
+          \left(
+          1+\frac{\gamma-1}{2}M^2
+          \right)^{-0.12}
+          \]
+        </div>
+
+        <div class="equation-definitions">
+          <span><strong>\(T_w\)</strong> — local wall temperature</span>
+          <span><strong>\(T_0\)</strong> — stagnation temperature</span>
+          <span><strong>\(\gamma\)</strong> — ratio of specific heats</span>
+          <span><strong>\(M\)</strong> — local Mach number</span>
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">Applied Convective Heat Flux</p>
+
+        <div class="equation">
+          \[
+          q'' = h_g \left(T_{aw}-T_w\right)
+          \]
+        </div>
+
+        <div class="equation-definitions">
+          <span><strong>\(q''\)</strong> — local wall heat flux</span>
+          <span><strong>\(T_{aw}\)</strong> — adiabatic wall temperature</span>
+          <span><strong>\(T_w\)</strong> — wall temperature</span>
+        </div>
+
+      </div>
+
+
+      <div class="thermal-data-grid">
+
+        <figure class="phase-image">
+          <img
+            src="../images/bartz-temperature-data.png"
+            alt="Tabular adiabatic wall temperature data used in ANSYS"
+          />
+
+          <figcaption>
+            Axial adiabatic wall-temperature distribution
+          </figcaption>
+        </figure>
+
+        <figure class="phase-image">
+          <img
+            src="../images/bartz-convection-data.png"
+            alt="Tabular Bartz convection coefficient data used in ANSYS"
+          />
+
+          <figcaption>
+            Axial Bartz convection-coefficient distribution
+          </figcaption>
+        </figure>
+
+      </div>
+
+
+      <div class="phase-content">
+
+        <p>
+          The resulting distributions were exported as tabular data along the
+          engine axial coordinate. The highest predicted convection coefficients
+          occurred near the throat, where gas velocity and thermal loading were
+          greatest.
+        </p>
+
+        <div class="phase-tags">
+          <span>NASA CEA</span>
+          <span>Bartz Correlation</span>
+          <span>MATLAB</span>
+          <span>Area-Ratio Sections</span>
+          <span>Adiabatic Wall Temperature</span>
+          <span>Iterative Wall Temperature</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 02 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">02</div>
+
+        <div>
+          <p class="phase-label">Phase 02</p>
+          <h2>Transient Thermal Analysis</h2>
+        </div>
+      </div>
+
+
+      <div class="phase-content">
+
+        <p>
+          The analytical results were implemented in ANSYS Mechanical as
+          position-dependent tabular boundary conditions. The Bartz convection
+          coefficients and corresponding gas-side temperatures were applied
+          along the engine axial direction, allowing the local thermal loading
+          to vary through the chamber, throat, and nozzle.
+        </p>
+
+        <p>
+          The transient model was used to compare candidate materials, wall
+          thicknesses, and burn durations. These trade studies showed that a
+          20 mm wall thickness manufactured from C110 copper provided the most
+          suitable heat-sink configuration for the planned short-duration test
+          campaign.
+        </p>
+
+        <p>
+          The results shown represent the conservative worst-case condition
+          before film cooling was included. Future film-cooling analysis is
+          expected to reduce the predicted chamber and throat temperatures.
+        </p>
+
+      </div>
+
+
+      <div class="thermal-video-frame">
+
+  <video controls muted loop playsinline preload="metadata">
+    <source src="../videos/thermalvideo.mp4" type="video/mp4" />
+
+    Your browser does not support embedded MP4 video.
+  </video>
+
+  <div class="video-caption">
+    Transient temperature response of the C110 copper heat-sink engine.
+  </div>
+
+</div>
+
+      <div class="thermal-results-grid">
+
+        <div class="thermal-result-card">
+          <span>Selected Material</span>
+          <strong>C110 Copper</strong>
+        </div>
+
+        <div class="thermal-result-card">
+          <span>Selected Wall Thickness</span>
+          <strong>20 mm</strong>
+        </div>
+
+        <div class="thermal-result-card">
+          <span>Analysis Type</span>
+          <strong>Transient Thermal</strong>
+        </div>
+
+        <div class="thermal-result-card">
+          <span>Cooling Assumption</span>
+          <strong>No Film Cooling</strong>
+        </div>
+
+      </div>
+
+
+      <div class="thermal-callout">
+
+        <p class="thermal-callout-label">Conservative Design Case</p>
+
+        <p>
+          The displayed maximum temperature represents a no-film-cooling
+          worst-case prediction. This case was intentionally used to provide
+          a conservative baseline for material selection, wall-thickness
+          evaluation, and allowable burn-time development.
+        </p>
+
+      </div>
+
+
+      <div class="phase-tags thermal-tags">
+        <span>ANSYS Mechanical</span>
+        <span>Transient Conduction</span>
+        <span>C110 Copper</span>
+        <span>20 mm Wall</span>
+        <span>Burn-Time Trade Study</span>
+        <span>Worst-Case Thermal Loading</span>
+      </div>
+
+    </section>
+
+
+    <!-- FUTURE STRUCTURAL SECTION -->
+
+    <section class="future-phase">
+
+      <p class="section-label">Future Addition</p>
+
+      <h2>Structural Analysis</h2>
+
+      <p>
+        Thermal-stress and pressure-load verification will be added after the
+        structural analysis is completed. This section will evaluate hoop stress,
+        radial stress, thermal expansion, von Mises stress, and the resulting
+        structural safety margin.
+      </p>
+
+    </section>
+
+
+    <!-- NEXT PROJECT -->
+
+    <section class="next-project">
+
+      <p class="section-label">Next Technical Contribution</p>
+
+      <h2>Feed System Design</h2>
+
+      <a class="industrial-btn filled" href="feed-system.html">
+        Continue
+      </a>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Engine Design & Performance | Colby Miller</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <header class="technical-hero">
+    <a class="back-link" href="schedule-1.html">← Back to Schedule 1</a>
+
+    <p class="section-label">Schedule 1 Technical Contribution</p>
+
+    <h1>Engine Design & Performance</h1>
+
+    <p class="technical-subtitle">
+      From performance trade studies to CFD validation
+    </p>
+
+    <p class="technical-intro">
+      Development of the Schedule 1 LOX/ethanol engine began with NASA CEA
+      performance studies, continued through analytical nozzle sizing and CAD,
+      and concluded with numerical verification in ANSYS Fluent.
+    </p>
+  </header>
+
+
+  <main class="technical-page">
+
+    <!-- PHASE 01 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">01</div>
+
+        <div>
+          <p class="phase-label">Phase 01</p>
+          <h2>Engine Performance Trade Study</h2>
+        </div>
+      </div>
+
+      <div class="phase-image phase-image-wide">
+        <img
+          src="../images/cea-carpet-plot.jpg"
+          alt="NASA CEA carpet plot used for engine performance trade studies"
+        />
+      </div>
+
+      <div class="phase-content">
+
+        <p>
+          Engine development began with a series of NASA CEA trade studies used
+          to compare candidate propellants and operating conditions. I developed
+          a MATLAB workflow that organized the CEA output and generated a carpet
+          plot showing the relationship between chamber temperature, specific
+          impulse, chamber pressure, and oxidizer-to-fuel ratio.
+        </p>
+
+        <p>
+          The team used the resulting plot to select an operating point that
+          balanced high specific impulse with manageable chamber temperature.
+          After selecting the propellant combination, mixture ratio, and chamber
+          pressure, the team established the target thrust and burn duration for
+          the engine.
+        </p>
+
+        <div class="phase-tags">
+          <span>NASA CEA</span>
+          <span>MATLAB</span>
+          <span>O/F Trade Study</span>
+          <span>Chamber Pressure</span>
+          <span>Performance Selection</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 02 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">02</div>
+
+        <div>
+          <p class="phase-label">Phase 02</p>
+          <h2>Nozzle Contour Design</h2>
+        </div>
+      </div>
+
+      <div class="image-pair">
+
+        <figure class="phase-image">
+          <img
+            src="../images/huzel-huang-nozzle.jpg"
+            alt="Huzel and Huang nozzle design reference"
+          />
+
+          <figcaption>
+            Huzel and Huang nozzle design methodology
+          </figcaption>
+        </figure>
+
+        <figure class="phase-image">
+          <img
+            src="../images/nozzle-cad.jpg"
+            alt="Schedule 1 nozzle contour CAD sketch"
+          />
+
+          <figcaption>
+            Final nozzle contour created in Onshape
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="phase-content">
+
+        <p>
+          Once the engine operating point was established, the nozzle geometry
+          was developed using the methodology presented in
+          <em>Modern Engineering for Design of Liquid-Propellant Rocket Engines</em>
+          by Huzel and Huang.
+        </p>
+
+        <p>
+          The throat area was calculated using the selected thrust, chamber
+          pressure, and thrust coefficient. The contraction ratio and expansion
+          ratio were then used to determine the chamber area and exit area,
+          followed by the throat, chamber, and exit diameters.
+        </p>
+
+        <p>
+          A 15-degree diverging half-angle and 30-degree converging half-angle
+          were selected using the design recommendations in the reference. The
+          corresponding converging and diverging section lengths were calculated
+          and used to create the final nozzle contour in Onshape.
+        </p>
+
+        <div class="phase-tags">
+          <span>Throat Sizing</span>
+          <span>Expansion Ratio</span>
+          <span>Contraction Ratio</span>
+          <span>15° Diverging Angle</span>
+          <span>30° Converging Angle</span>
+          <span>Onshape CAD</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 03 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">03</div>
+
+        <div>
+          <p class="phase-label">Phase 03</p>
+          <h2>CFD Verification</h2>
+        </div>
+      </div>
+
+      <div class="phase-image phase-image-wide">
+        <img
+          src="../images/nozzle-cfd-composite.jpg"
+          alt="ANSYS Fluent nozzle CFD results showing Mach number, pressure, temperature, and velocity"
+        />
+      </div>
+
+      <div class="phase-content">
+
+        <p>
+          The completed nozzle geometry was verified using a two-dimensional
+          axisymmetric model in ANSYS Fluent. The simulation used the Species
+          Transport model, with the combustion-product mixture defined using
+          species mass fractions obtained from NASA CEA.
+        </p>
+
+        <p>
+          The model was used to evaluate the Mach number, static pressure,
+          static temperature, velocity, mass flow rate, and thrust produced by
+          the analytical nozzle design. The resulting flow field also provided
+          detailed information about the expansion process and exhaust plume
+          that could not be obtained from the one-dimensional calculations alone.
+        </p>
+
+        <div class="phase-tags">
+          <span>ANSYS Fluent</span>
+          <span>Species Transport</span>
+          <span>Axisymmetric CFD</span>
+          <span>Mach Number</span>
+          <span>Static Pressure</span>
+          <span>Temperature</span>
+          <span>Velocity</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 04 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+        <div class="phase-number">04</div>
+
+        <div>
+          <p class="phase-label">Phase 04</p>
+          <h2>Analytical Validation</h2>
+        </div>
+      </div>
+
+      <div class="validation-layout">
+
+        <div class="phase-image">
+          <img
+            src="../images/cea-cfd-comparison.jpg"
+            alt="Comparison between NASA CEA predictions and CFD results"
+          />
+        </div>
+
+        <div class="validation-summary">
+
+          <p class="validation-kicker">Validation Metrics</p>
+
+          <div class="validation-grid">
+
+            <div class="validation-card">
+              <span>Exit Mach Error</span>
+              <strong>0.56%</strong>
+            </div>
+
+            <div class="validation-card">
+              <span>Thrust Error</span>
+              <strong>0.51%</strong>
+            </div>
+
+            <div class="validation-card">
+              <span>Exit Pressure Error</span>
+              <strong>-2.21%</strong>
+            </div>
+
+            <div class="validation-card">
+              <span>Mass Flow Error</span>
+              <strong>5.79%</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="phase-content">
+
+        <p>
+          The CFD results were compared directly with NASA CEA predictions for
+          exit Mach number, exit pressure, exit temperature, mass flow rate,
+          exit velocity, and thrust.
+        </p>
+
+        <p>
+          The close agreement in exit Mach number and thrust demonstrated that
+          the CFD model accurately reproduced the overall analytical nozzle
+          performance. The validated geometry then became the baseline for the
+          engine thermal and structural analyses.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEXT PROJECT -->
+
+    <section class="next-project">
+
+      <p class="section-label">Next Technical Contribution</p>
+
+      <h2>Engine Thermal & Structural Analysis</h2>
+
+      <a class="industrial-btn filled" href="thermal-analysis.html">
+        Continue
+      </a>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Feed System Design | Colby Miller</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<body>
+
+  <header class="technical-hero">
+
+    <a class="back-link" href="schedule-1.html">
+      ← Back to Schedule 1
+    </a>
+
+    <p class="section-label">
+      Schedule 1 Technical Contribution
+    </p>
+
+    <h1>Feed System Design</h1>
+
+    <p class="technical-subtitle">
+      P&amp;ID development, component sizing, and system integration
+    </p>
+
+    <p class="technical-intro">
+      The Schedule 1 feed system was developed to safely store, pressurize,
+      load, vent, and deliver liquid oxygen and ethanol to a pressure-fed
+      rocket engine. The design process progressed from system architecture
+      and operating requirements through component selection and preliminary
+      fluids CAD.
+    </p>
+
+  </header>
+
+
+  <main class="technical-page">
+
+    <!-- PHASE 01 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+
+        <div class="phase-number">01</div>
+
+        <div>
+          <p class="phase-label">Phase 01</p>
+          <h2>P&amp;ID Development</h2>
+        </div>
+
+      </div>
+
+
+      <div class="phase-content">
+
+        <p>
+          Feed-system development began with a complete piping and
+          instrumentation diagram defining the architecture of the test stand.
+          The P&amp;ID established the liquid oxygen, ethanol, nitrogen
+          pressurization, loading, venting, purge, ignition, and engine-feed
+          paths before detailed hardware integration began.
+        </p>
+
+        <p>
+          The diagram also defined the placement of regulators, main propellant
+          valves, relief devices, check valves, filters, pressure transducers,
+          thermocouples, and other instrumentation. Developing the system at
+          the schematic level allowed operating sequences and safety features
+          to be evaluated before components were positioned in CAD.
+        </p>
+
+      </div>
+
+
+      <figure class="feedsystemimage">
+
+        <img
+          src="../images/P&ID.jpg"
+          alt="Schedule 1 piping and instrumentation diagram"
+        />
+
+        <figcaption>
+          Schedule 1 LOX, ethanol, pressurization, ignition, and
+          instrumentation architecture.
+        </figcaption>
+
+      </figure>
+
+
+      <div class="phase-tags feedsystemtags">
+
+        <span>LOX Feed System</span>
+        <span>Ethanol Feed System</span>
+        <span>Nitrogen Pressurization</span>
+        <span>Fill and Vent Paths</span>
+        <span>Relief Devices</span>
+        <span>Instrumentation</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 02 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+
+        <div class="phase-number">02</div>
+
+        <div>
+          <p class="phase-label">Phase 02</p>
+          <h2>Propellant and Component Sizing</h2>
+        </div>
+
+      </div>
+
+
+      <div class="phase-content">
+
+        <p>
+          Engine mass-flow requirements and target burn duration were used to
+          calculate the required quantity of each propellant. The resulting
+          liquid masses were converted into required tank volumes using the
+          corresponding propellant densities and an additional operational
+          volume margin.
+        </p>
+
+        <p>
+          Component selection was based on operating pressure, required flow
+          capacity, pressure drop, temperature, material compatibility, and
+          availability. Regulators were sized in standard cubic feet per minute
+          to verify that the nitrogen pressurization system could maintain the
+          required tank pressure throughout the burn.
+        </p>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">
+          Required Propellant Mass
+        </p>
+
+        <div class="equation">
+          \[
+          m_p = \dot{m}_p t_b
+          \]
+        </div>
+
+        <div class="equation-definitions">
+
+          <span>
+            <strong>\(m_p\)</strong> — required propellant mass
+          </span>
+
+          <span>
+            <strong>\(\dot{m}_p\)</strong> — propellant mass-flow rate
+          </span>
+
+          <span>
+            <strong>\(t_b\)</strong> — target burn duration
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">
+          Required Liquid Volume
+        </p>
+
+        <div class="equation">
+          \[
+          V_p = \frac{m_p}{\rho_p}
+          \]
+        </div>
+
+        <div class="equation-definitions">
+
+          <span>
+            <strong>\(V_p\)</strong> — required liquid volume
+          </span>
+
+          <span>
+            <strong>\(m_p\)</strong> — propellant mass
+          </span>
+
+          <span>
+            <strong>\(\rho_p\)</strong> — propellant density
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">
+          Tank Volume With Operational Margin
+        </p>
+
+        <div class="equation">
+          \[
+          V_{tank} = V_p \left(1 + M\right)
+          \]
+        </div>
+
+        <div class="equation-definitions">
+
+          <span>
+            <strong>\(V_{tank}\)</strong> — selected minimum tank volume
+          </span>
+
+          <span>
+            <strong>\(V_p\)</strong> — calculated propellant volume
+          </span>
+
+          <span>
+            <strong>\(M\)</strong> — residual and operational margin
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">
+          Standard Nitrogen Volumetric Flow
+        </p>
+
+        <div class="equation">
+          \[
+          \dot{V}_s =
+          \frac{\dot{m}_{N_2} R_{N_2} T_s}{P_s}
+          \]
+        </div>
+
+        <div class="equation-definitions">
+
+          <span>
+            <strong>\(\dot{V}_s\)</strong> — standard volumetric flow
+          </span>
+
+          <span>
+            <strong>\(\dot{m}_{N_2}\)</strong> — required nitrogen mass flow
+          </span>
+
+          <span>
+            <strong>\(R_{N_2}\)</strong> — nitrogen gas constant
+          </span>
+
+          <span>
+            <strong>\(T_s\)</strong> — standard absolute temperature
+          </span>
+
+          <span>
+            <strong>\(P_s\)</strong> — standard absolute pressure
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="equation-panel">
+
+        <p class="equation-label">
+          Gas Regulator Flow Coefficient
+        </p>
+
+        <div class="equation">
+          \[
+          Q_s =
+          1360 C_v Y P_1
+          \sqrt{
+          \frac{x}
+          {G_g T_1 Z}
+          }
+          \]
+        </div>
+
+        <div class="equation equationsecondary">
+          \[
+          C_v =
+          \frac{Q_s}
+          {1360 Y P_1}
+          \sqrt{
+          \frac{G_g T_1 Z}
+          {x}
+          }
+          \]
+        </div>
+
+        <div class="equation-definitions">
+
+          <span>
+            <strong>\(Q_s\)</strong> — standard gas flow in SCFM
+          </span>
+
+          <span>
+            <strong>\(C_v\)</strong> — regulator flow coefficient
+          </span>
+
+          <span>
+            <strong>\(Y\)</strong> — gas expansion factor
+          </span>
+
+          <span>
+            <strong>\(P_1\)</strong> — regulator inlet pressure, absolute
+          </span>
+
+          <span>
+            <strong>\(x\)</strong> — pressure-drop ratio,
+            \(\Delta P/P_1\)
+          </span>
+
+          <span>
+            <strong>\(G_g\)</strong> — gas specific gravity
+          </span>
+
+          <span>
+            <strong>\(T_1\)</strong> — inlet absolute temperature
+          </span>
+
+          <span>
+            <strong>\(Z\)</strong> — compressibility factor
+          </span>
+
+        </div>
+
+        <p class="equationnote">
+          Final regulator selection was checked using the sizing convention
+          and performance data supplied by the regulator manufacturer,
+          including choked-flow limitations where applicable.
+        </p>
+
+      </div>
+
+
+      <div class="componentgrid">
+
+        <div class="componentcard">
+          <span>Regulators</span>
+          <strong>Pressure range, SCFM capacity, oxygen compatibility</strong>
+        </div>
+
+        <div class="componentcard">
+          <span>Main Valves</span>
+          <strong>Flow coefficient, pressure rating, remote actuation</strong>
+        </div>
+
+        <div class="componentcard">
+          <span>Tubing and Fittings</span>
+          <strong>Flow capacity, material, pressure, and temperature</strong>
+        </div>
+
+        <div class="componentcard">
+          <span>Instrumentation</span>
+          <strong>Tank, inlet, chamber, and igniter measurements</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHASE 03 -->
+
+    <section class="technical-phase">
+
+      <div class="phase-heading">
+
+        <div class="phase-number">03</div>
+
+        <div>
+          <p class="phase-label">Phase 03</p>
+          <h2>Preliminary Fluids CAD</h2>
+        </div>
+
+      </div>
+
+
+      <div class="phase-content">
+
+        <p>
+          A preliminary CAD assembly was developed to translate the P&amp;ID
+          into a physical system. The model established the initial tank
+          placement, regulator arrangement, valve locations, tubing routes,
+          mounting panels, and overall packaging of the LOX and ethanol
+          subsystems.
+        </p>
+
+        <p>
+          The feed-system architecture and selected hardware have continued to
+          evolve since this model was created. The CAD shown represents an
+          early integration study used to evaluate packaging and accessibility,
+          rather than the final test-stand configuration.
+        </p>
+
+      </div>
+
+
+      <figure class="feedsystemimage cadimage">
+
+        <img
+          src="../images/fluidscad.jpg"
+          alt="Preliminary Schedule 1 fluids system CAD"
+        />
+
+        <figcaption>
+          Preliminary fluids integration model showing tanks, regulators,
+          valves, tubing, and mounting layout.
+        </figcaption>
+
+      </figure>
+
+
+      <div class="phase-tags feedsystemtags">
+
+        <span>Onshape</span>
+        <span>Component Packaging</span>
+        <span>Tubing Routing</span>
+        <span>Valve Accessibility</span>
+        <span>Mounting Layout</span>
+        <span>Preliminary Design</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- STATUS -->
+
+    <section class="future-phase">
+
+      <p class="section-label">Current Status</p>
+
+      <h2>Ongoing System Development</h2>
+
+      <p>
+        The P&amp;ID, major component selection, sizing calculations, and
+        preliminary CAD have been completed. Final component placement,
+        detailed tubing routing, remote valve actuation, adjustable regulator
+        control, and automated propellant loading will be incorporated as the
+        stand progresses toward fully remote operation.
+      </p>
+
+    </section>
+
+
+    <section class="next-project">
+
+      <p class="section-label">Return to Project</p>
+
+      <h2>Schedule 1</h2>
+
+      <a class="industrial-btn filled" href="schedule-1.html">
+        Return
+      </a>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
