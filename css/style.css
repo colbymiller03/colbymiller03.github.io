@@ -25,11 +25,13 @@ body {
   overflow: hidden;
 
   background:
-    linear-gradient(rgba(18, 18, 18, 0.45), rgba(18, 18, 18, 0.78)),
-    radial-gradient(circle at center, rgba(255, 102, 0, 0.18), transparent 55%),
+    linear-gradient(rgba(18,18,18,0.15), rgba(18,18,18,0.30)),
+    radial-gradient(circle at center,
+        rgba(255,102,0,0.10),
+        transparent 60%),
     url("../images/thermal-bg.jpg");
 
-  background-size: contain;
+  background-size: cover;;
 background-repeat: no-repeat;
 background-position: center;
 background-color: #111111;
@@ -54,8 +56,7 @@ background-color: #111111;
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(circle, transparent 38%, rgba(0, 0, 0, 0.45) 100%),
-    linear-gradient(135deg, transparent 0 78%, rgba(255, 102, 0, 0.28) 78.2%, transparent 78.5%);
+    radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.18) 100%);
 }
 
 .hero-content {
@@ -3684,7 +3685,8 @@ background-color: #111111;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-.hero::before {
-    background: rgba(0, 0, 0, 0.35);
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+    url("../images/thermal-bg.jpg") center / cover no-repeat;
 }
